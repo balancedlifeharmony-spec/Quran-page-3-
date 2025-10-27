@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سورة البقرة - آيات ٦-١٦ | Surah Al-Baqarah - Verses 6-16</title>
+    <link rel="icon" type="image/jpeg" href="https://i.imgur.com/PyuoJ6E.jpeg">
+    <link rel="apple-touch-icon" href="https://i.imgur.com/PyuoJ6E.jpeg">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Amiri:wght@400;700&family=Lato:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.8;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+            padding-top: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .navigation {
+            text-align: center;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            background: linear-gradient(45deg, #8b4513, #a0522d);
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+            min-width: 120px;
+            text-align: center;
+        }
+
+        .nav-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            font-family: 'Amiri Quran', serif;
+            color: #8b4513;
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 1.1rem;
+            margin: 10px 0;
+        }
+
+        .chapter-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .info-item {
+            text-align: center;
+        }
+
+        .info-label {
+            color: #8b4513;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .info-value {
+            color: #333;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-top: 5px;
+        }
+
+        .audio-player-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .audio-player-section h3 {
+            color: #8b4513;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .audio-player-section p {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .audio-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+
+        audio {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 25px;
+            outline: none;
+            height: 54px;
+        }
+
+        audio::-webkit-media-controls-panel {
+            background: linear-gradient(45deg, #8b4513, #a0522d);
+        }
+
+        audio:focus {
+            outline: 2px solid #8b4513;
+            outline-offset: 2px;
+        }
+
+        .reciter-info {
+            font-family: 'Amiri', serif;
+            color: #8b4513;
+            font-size: 1.1rem;
+            margin-top: 10px;
+        }
+
+        .verse-selector {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin-top: 15px;
+            width: 100%;
+        }
+
+        .verse-btn {
+            background: linear-gradient(45deg, #8b4513, #a0522d);
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.2);
+        }
+
+        .verse-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(139, 69, 19, 0.3);
+        }
+
+        .verse-btn.active {
+            background: linear-gradient(45deg, #a0522d, #8b4513);
+            box-shadow: 0 8px 20px rgba(139, 69, 19, 0.4);
+        }
+
+        .verses-container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .verse {
+            margin-bottom: 35px;
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.03) 0%, rgba(160, 82, 45, 0.03) 100%);
+            border-radius: 10px;
+            border-left: 4px solid #8b4513;
+        }
+
+        .verse-number {
+            background: linear-gradient(45deg, #8b4513, #a0522d);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+
+        .arabic-text {
+            font-family: 'Amiri Quran', serif;
+            font-size: 1.6rem;
+            color: #2c3e50;
+            line-height: 2.2;
+            margin-bottom: 15px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 8px;
+            direction: rtl;
+            text-align: right;
+        }
+
+        .english-text {
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.8;
+            direction: ltr;
+            text-align: left;
+            padding: 15px;
+            background: rgba(240, 248, 255, 0.7);
+            border-radius: 8px;
+        }
+
+        .reflection-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .reflection-section h2 {
+            color: #8b4513;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #8b4513;
+        }
+
+        .reflection-point {
+            margin-bottom: 40px;
+            padding: 25px;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.03) 0%, rgba(160, 82, 45, 0.03) 100%);
+            border-radius: 10px;
+            border-left: 5px solid #8b4513;
+        }
+
+        .reflection-point h3 {
+            color: #8b4513;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+        }
+
+        .reflection-arabic {
+            font-family: 'Amiri', serif;
+            color: #2c3e50;
+            font-size: 1.1rem;
+            line-height: 2;
+            margin-bottom: 20px;
+            direction: rtl;
+            text-align: right;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 8px;
+        }
+
+        .reflection-english {
+            color: #555;
+            font-size: 1.05rem;
+            line-height: 1.9;
+            direction: ltr;
+            text-align: left;
+            padding: 15px;
+            background: rgba(240, 248, 255, 0.7);
+            border-radius: 8px;
+        }
+
+        .footer {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .footer-text {
+            color: #8b4513;
+            font-size: 1.1rem;
+            margin: 12px 0;
+            font-weight: 500;
+        }
+
+        .footer-text:nth-child(2) {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .footer-text:nth-child(3),
+        .footer-text:nth-child(4) {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .signature {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .signature-header {
+            color: #8b4513;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .signature-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .signature-profile {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .signature-info {
+            text-align: left;
+        }
+
+        .signature-name {
+            color: #2c3e50;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 3px;
+        }
+
+        .signature-company {
+            color: #8b4513;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .signature-description {
+            color: #666;
+            font-size: 0.9rem;
+            max-width: 300px;
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+
+        .signature-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .signature-btn {
+            background: linear-gradient(45deg, #8b4513, #a0522d);
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .signature-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.3);
+        }
+
+        .signature-copyright {
+            color: #999;
+            font-size: 0.85rem;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .chapter-info {
+                gap: 15px;
+            }
+
+            .verses-container,
+            .reflection-section,
+            .footer,
+            .signature {
+                padding: 20px;
+            }
+
+            .arabic-text {
+                font-size: 1.4rem;
+            }
+
+            .english-text {
+                font-size: 0.95rem;
+            }
+
+            .reflection-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .verse-btn {
+                padding: 8px 14px;
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.6rem;
+            }
+
+            .header p {
+                font-size: 0.95rem;
+            }
+
+            .arabic-text {
+                font-size: 1.2rem;
+                line-height: 1.9;
+            }
+
+            .english-text {
+                font-size: 0.9rem;
+                line-height: 1.7;
+            }
+
+            .footer-text {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <a href="#" class="nav-link">← Previous Verse</a>
+            <a href="#" class="nav-link">Home</a>
+            <a href="#" class="nav-link">Next Verse →</a>
+        </div>
+
+        <div class="header">
+            <h1>سورة البقرة</h1>
+            <p>Surah Al-Baqarah | The Cow</p>
+            <p>The Second Chapter of the Qur'an</p>
+            
+            <div class="chapter-info">
+                <div class="info-item">
+                    <div class="info-label">Verses Displayed</div>
+                    <div class="info-value">6 - 16</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Chapter Number</div>
+                    <div class="info-value">2</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Revelation Period</div>
+                    <div class="info-value">Madinan</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="audio-player-section">
+            <h3>🎵 Quranic Recitation | تلاوة قرآنية</h3>
+            <p>القارئ: عبد الباسط عبد الصمد | Reciter: Abdul Basit Abdus Samad</p>
+            
+            <div class="audio-controls">
+                <audio id="quranAudio" controls>
+                    <source id="audioSource" src="https://everyayah.com/data/Abdul_Basit_Murattal_192kbps/002006.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                
+                <div class="verse-selector">
+                    <button class="verse-btn" style="background: linear-gradient(45deg, #2ecc71, #27ae60); font-weight: 700;" onclick="playAllVerses()">▶ Play All Verses</button>
+                    <button class="verse-btn active" onclick="playVerse(6)">Verse 6</button>
+                    <button class="verse-btn" onclick="playVerse(7)">Verse 7</button>
+                    <button class="verse-btn" onclick="playVerse(8)">Verse 8</button>
+                    <button class="verse-btn" onclick="playVerse(9)">Verse 9</button>
+                    <button class="verse-btn" onclick="playVerse(10)">Verse 10</button>
+                    <button class="verse-btn" onclick="playVerse(11)">Verse 11</button>
+                    <button class="verse-btn" onclick="playVerse(12)">Verse 12</button>
+                    <button class="verse-btn" onclick="playVerse(13)">Verse 13</button>
+                    <button class="verse-btn" onclick="playVerse(14)">Verse 14</button>
+                    <button class="verse-btn" onclick="playVerse(15)">Verse 15</button>
+                    <button class="verse-btn" onclick="playVerse(16)">Verse 16</button>
+                </div>
+                
+                <div class="reciter-info">
+                    بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+                </div>
+            </div>
+        </div>
+
+        <div class="verses-container">
+            <div class="verse">
+                <span class="verse-number">Verse 6</span>
+                <div class="arabic-text">
+                    إِنَّ ٱلَّذِينَ كَفَرُوا۟ سَوَاءٌ عَلَيْهِمْ ءَأَنذَرْتَهُمْ أَمْ لَمْ تُنذِرْهُمْ لَا يُؤْمِنُونَ
+                </div>
+                <div class="english-text">
+                    Indeed, those who have disbelieved - it is all the same for them whether you warn them or do not warn them - they will not believe.
+                </div>
+            </div>
+
+            <div class="verse">
+                <span class="verse-number">Verse 7</span>
+                <div class="arabic-text">
+                    خَتَمَ ٱللَّهُ عَلَىٰ قُلُوبِهِمْ وَعَلَىٰ سَمْعِهِمْ ۖ وَعَلَىٰ أَبْصَٰرِهِمْ غِشَٰوَةٌۭ ۖ وَلَهُمْ عَذَابٌ عَظِيمٌ
+                </div>
+                <div class="english-text">
+                    Allah has set a seal upon their hearts and upon their hearing, and over their vision is a veil. And for them is a great punishment.
+                </div>
+            </div>
+
+            <div class="verse">
+                <span class="verse-number">Verse 8</span>
+                <div class="arabic-text">
+                    وَمِنَ ٱلنَّاسِ مَن يَقُولُ ءَامَنَّا بِٱللَّهِ وَبِٱلْيَوْمِ ٱلْآخِرِ وَمَا هُم بِمُؤْمِنِينَ
+                </div>
+                <div class="english-text">
+                    And of the people are some who say, "We believe in Allah and the Last Day," but they are not believers.
+                </div>
+            </div>
+
+            <div class="verse">
+                <span class="verse-number">Verse 9</span>
+                <div class="arabic-text">
+                    يُخَٰدِعُونَ ٱللَّهَ وَٱلَّذِينَ ءَامَنُوا۟ وَمَا يَخْدَعُونَ إِلَّآ أَنفُسَهُمْ وَمَا يَشْعُرُونَ
+                </div>
+                <div class="english-text">
+                    They deceive Allah and those who believe, but they deceive not except themselves and perceive [it] not.
+                </div>
+            </div>
+
+            <div class="verse">
+                <span class="verse-number">Verse 10</span>
+                <div class="arabic-text">
+                    فِى قُلُوبِهِم مَّرَضٌۭ فَزَادَهُمُ ٱللَّهُ مَرَضًۭا ۖ وَلَهُمْ عَذَابٌ أَلِيمٌۭ بِمَا كَانُوا۟ يَكْذِبُونَ
+                </div>
+                <div class="english-text">
+                    In their hearts is disease, so Allah has increased their disease; and for them is a painful punishment because they [habitually] were lying.
+                </div>
+            </div>
+
+            <div class="verse">
+                <span class="verse-number">Verse 11</span>
+                <div class="arabic-text">
+                    وَإِذَا قِيلَ لَهُمْ لَا تُفْسِدُوا۟ فِى ٱلْأَرْضِ قَالُوٓا۟ إِنَّمَا نَحْنُ مُصْلِحُونَ
+                </div>
+                <div class="english-text">
+                    And when it is said to them, "Do not cause corruption on the earth," they say, "We are only reformers."
+                </div>
+            </div>
+
+            <div class="verse">
+                <span class="verse-number">Verse 12</span>
+                <div class="arabic-text">
+                    أَلَآ إِنَّهُمْ هُمُ ٱلْمُفْسِدُونَ وَلَٰكِن لَّا يَشْعُرُونَ
+                </div>
+                <div class="english-text">
+                    Unquestionably, it is they who are the corruptors, but they perceive [it] not.
+                </div>
+            </div>
+
+            <div class="verse">
+                <span class="verse-number">Verse 13</span>
+                <div class="arabic-text">
+                    وَإِذَا قِيلَ لَهُمْ ءَامِنُوا۟ كَمَآ ءَامَنَ ٱلنَّاسُ قَالُوٓا۟ أَنُؤْمِنُ كَمَآ ءَامَنَ ٱلسُّفَهَآءُ ۗ أَلَآ إِنَّهُمْ هُمُ ٱلسُّفَهَآءُ وَلَٰكِن لَّا يَعْلَمُونَ
+                </div>
+                <div class="english-text">
+                    And when it is said to them, "Believe as the people have believed," they say, "Should we believe as the foolish have believed?" Unquestionably, it is they who are the foolish, but they know [it] not.
+                </div>
+            </div>
+
+            <div class="verse">
+                <span class="verse-number">Verse 14</span>
+                <div class="arabic-text">
+                    وَإِذَا لَقُوا۟ ٱلَّذِينَ ءَامَنُوا۟ قَالُوٓا۟ ءَامَنَّا ۖ وَإِذَا خَلَوْا۟ إِلَىٰ شَيَٰطِينِهِمْ قَالُوٓا۟ إِنَّا مَعَكُمْ إِنَّمَا نَحْنُ مُسْتَهْزِءُونَ
+                </div>
+                <div class="english-text">
+                    And when they encounter those who believe, they say, "We believe"; but when they are alone with their devils, they say, "Indeed, we are with you; we were only mockers."
+                </div>
+            </div>
+
+            <div class="verse">
+                <span class="verse-number">Verse 15</span>
+                <div class="arabic-text">
+                    ٱللَّهُ يَسْتَهْزِئُ بِهِمْ وَيَمُدُّهُمْ فِى طُغْيَٰنِهِمْ يَعْمَهُونَ
+                </div>
+                <div class="english-text">
+                    Allah mocks them and prolongs them in their transgression [while] they wander blindly.
+                </div>
+            </div>
+
+            <div class="verse">
+                <span class="verse-number">Verse 16</span>
+                <div class="arabic-text">
+                    أُولَٰٓئِكَ ٱلَّذِينَ ٱشْتَرَوُا۟ ٱلضَّلَٰلَةَ بِٱلْهُدَىٰ فَمَا رَبِحَت تِّجَٰرَتُهُمْ وَمَا كَانُوا۟ مُهْتَدِينَ
+                </div>
+                <div class="english-text">
+                    Those are the ones who have purchased error [in exchange] for guidance, so their transaction has brought no profit, nor were they guided.
+                </div>
+            </div>
+        </div>
+
+        <div class="reflection-section">
+            <h2>💭 تأملات يومية | Daily Reflections</h2>
+            
+            <div class="reflection-point">
+                <h3>🚪 الحرمان من الإيمان | Deprivation from Faith</h3>
+                <div class="reflection-arabic">
+                    إن الذين كفروا سواء عليهم أأنذرت أم لم تنذرهم! كفرهم ليس عن جهل بل هو استكبار وعناد. وإن أنذرت أو لم تنذر، النتيجة واحدة - لا يؤمنون. لماذا؟ لأن الكفر اختيار وليس قدر فقط. خَتَمَ الله على قلوبهم - ختم القلب معناه أن الله سلبهم القدرة على فهم الحق. على سمعهم - لا يسمعون حق. وعلى أبصارهم غشاوة - يرون الحق لكن لا يرونه! هذا هو جزاء الكبر والعناد. القلب الذي يختار الضلالة يختم الله عليه. الإيمان أولاً اختيار، ثم إذا أصر على الكفر، يختم الله على قلبه.
+                </div>
+                <div class="reflection-english">
+                    "Indeed, those who have disbelieved - it is all the same whether you warn them or not" - their disbelief is not from ignorance but from arrogance and stubbornness. Warning or not warning, result is same - they won't believe. Why? Because disbelief is choice, not just fate. "Allah has set a seal upon their hearts" - sealed heart means Allah deprived them of ability to understand truth. "Upon their hearing" - they don't hear truth. "Upon their vision is a veil" - they see truth but don't see it! This is punishment for arrogance and stubbornness. Heart that chooses misguidance, Allah seals it. Faith is first a choice, then if persisting in disbelief, Allah seals the heart.
+                </div>
+            </div>
+
+            <div class="reflection-point">
+                <h3>🎭 المنافقون | The Hypocrites</h3>
+                <div class="reflection-arabic">
+                    ومن الناس من يقول آمنا بالله واليوم الآخر وما هم بمؤمنين! هؤلاء هم المنافقون - يقولون بألسنتهم آمنا لكن قلوبهم لا تؤمن. يخادعون الله والذين آمنوا - يحاولون خداع الله (وهذا لا يمكن) وخداع المؤمنين. وما يخدعون إلا أنفسهم - لا ينجحون في الخداع إلا لأنفسهم. يظنون أنهم يخدعون لكن في الحقيقة يخدعون أنفسهم فقط. النفاق مرض القلب - في قلوبهم مرض فزادهم الله مرضاً. المرض الأول هو عدم الإيمان بالله، والمرض الثاني هو النفاق. والمرض يزداد إذا استمر الإنسان في طريقه. ولهم عذاب أليم بما كانوا يكذبون - العذاب بسبب التكذيب المتعمد.
+                </div>
+                <div class="reflection-english">
+                    "And of the people are some who say, 'We believe in Allah and the Last Day,' but they are not believers!" These are hypocrites - they say with tongues we believe, but hearts don't believe. "They deceive Allah and those who believe" - try to deceive Allah (impossible) and deceive believers. "They deceive not except themselves" - their deception succeeds only against themselves. They think they're deceiving but truly deceiving only themselves. Hypocrisy is disease of heart - "in their hearts is disease" so Allah increased their disease. First disease is lack of faith in Allah, second disease is hypocrisy. Disease increases if person continues this path. "For them is painful punishment because they were lying" - punishment for deliberate disbelief.
+                </div>
+            </div>
+
+            <div class="reflection-point">
+                <h3>🌍 ادعاء الإصلاح والإفساد | Claiming Reform While Corrupting</h3>
+                <div class="reflection-arabic">
+                    وإذا قيل لهم لا تفسدوا في الأرض قالوا إننا نحن مصلحون! يدعون الإصلاح بينما هم يفسدون. ألا إنهم هم المفسدون ولكن لا يشعرون - هم لا يدركون أنهم يفسدون! هذا من العمى البصيري والقلبي - أنت تفسد والناس يرون فسادك، لكنك لا تشعر. الفساد في الأرض كثير، لكن الأخطر فساد من يدعي الإصلاح وهو يفسد. لأنه يخدع الناس، ويخدع نفسه. يظن أنه على حق وهو على باطل. هؤلاء هم الذين قال عنهم الله إنهم لا يشعرون - عمى القلب أسوأ من عمى العين.
+                </div>
+                <div class="reflection-english">
+                    "And when it is said to them, 'Do not cause corruption on earth,' they say, 'We are only reformers!'" They claim reform while corrupting. "Unquestionably, it is they who are corruptors, but they perceive [it] not" - they don't realize they're corrupting! This is blindness of sight and heart - you corrupt and people see your corruption, but you don't feel it. Corruption in earth is much, but most dangerous is corruption claimed as reform. Because it deceives people and deceives self. Thinks he's right while on falsehood. These are ones Allah said don't perceive - blindness of heart worse than blindness of eye.
+                </div>
+            </div>
+
+            <div class="reflection-point">
+                <h3>🎪 التهكم والسخرية | Mockery and Ridicule</h3>
+                <div class="reflection-arabic">
+                    وإذا قيل لهم آمنوا كما آمن الناس قالوا أنؤمن كما آمن السفهاء! هم يرفضون الإيمان ويسخرون من المؤمنين. يسمونهم سفهاء لأنهم آمنوا بالله. ألا إنهم هم السفهاء ولكن لا يعلمون - السفهاء هم من يرفضون الحق ويسخرون ممن آمن. السفه حقيقي أن تترك الله وتعبد غيره! وإذا لقوا الذين آمنوا قالوا آمنا - عندما يرون المؤمنين ينافقون ويقولون آمنا. وإذا خلوا إلى شياطينهم قالوا إننا معكم - عندما يخلون مع أهل الفساد يقولون نحن معكم على الكفر. الله يستهزئ بهم - الاستهزاء الإلهي أعظم عقوبة. ويمدهم في طغيانهم يعمهون - يتركهم يغرقون في ضلالهم متخبطين.
+                </div>
+                <div class="reflection-english">
+                    "And when it is said to them, 'Believe as the people have believed,' they say, 'Should we believe as the foolish have believed?'" They reject faith and mock believers. Call them foolish because they believed in Allah. "Unquestionably, it is they who are the foolish" - foolish are those rejecting truth and mocking believers. True foolishness is leaving Allah and worshipping others! "And when they encounter those who believe, they say, 'We believe'" - when they see believers they hypocrite, saying we believe. "But when alone with their devils, they say, 'Indeed, we are with you'" - when alone with corrupt people say we're with you in disbelief. "Allah mocks them" - divine mockery is greatest punishment. "And prolongs them in transgression wandering blindly" - leaves them drowning in misguidance, stumbling.
+                </div>
+            </div>
+
+            <div class="reflection-point">
+                <h3>💰 تجارة خاسرة | A Losing Trade</h3>
+                <div class="reflection-arabic">
+                    أولئك الذين اشتروا الضلالة بالهدى! صورة عظيمة للمنافقين - هم اشتروا الضلالة بالهدى. تخيل أنك اشتريت خسارة بربح! اشتريت الفساد بالصلاح! اشتريت الكفر بالإيمان! فما ربحت تجارتهم - تجارتهم خاسرة كلياً. وما كانوا مهتدين - حتى في طريق الحياة ضاعوا. الإنسان إذا اختار الضلالة على الهدى، خسر الدنيا والآخرة. تجارته خاسرة - لم يربح شيء. بل خسر الجنة والرضا الإلهي. من يختار الهدى يربح، ومن يختار الضلالة يخسر. هذا التجارة الوحيدة في الحياة - إما أن تتاجر مع الله بالإيمان فتربح، أو تتاجر مع الشيطان بالكفر فتخسر.
+                </div>
+                <div class="reflection-english">
+                    "Those are the ones who have purchased error in exchange for guidance!" Magnificent image of hypocrites - they bought misguidance for guidance. Imagine buying loss for profit! Bought corruption for goodness! Bought disbelief for faith! "So their transaction has brought no profit" - their trade is completely losing. "Nor were they guided" - even in life's path they're lost. If person chooses misguidance over guidance, loses both worlds. His trade is losing - gained nothing. Rather lost paradise and divine pleasure. Whoever chooses guidance profits, whoever chooses misguidance loses. This is only trade in life - either trade with Allah through faith and profit, or trade with Satan through disbelief and lose.
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-text">
+                "خَتَمَ ٱللَّهُ عَلَىٰ قُلُوبِهِمْ وَعَلَىٰ سَمْعِهِمْ وَعَلَىٰ أَبْصَٰرِهِمْ غِشَٰوَةٌۭ"
+            </div>
+            <div class="footer-text">
+                "Allah has set a seal upon their hearts and upon their hearing, and over their vision is a veil."
+            </div>
+            <div class="footer-text">
+                May this daily reflection bring us closer to Allah and increase our understanding of His words
+            </div>
+            <div class="footer-text">
+                🤲 آمين يا رب العالمين | Ameen Ya Rabb Al-Alameen 🤲
+            </div>
+        </div>
+
+        <div class="signature">
+            <div class="signature-header">Designed and Coded by</div>
+            <div class="signature-content">
+                <img src="https://balancedlifeharmony-spec.github.io/signature-/profile.jpg" alt="Emhemed Elahresh" class="signature-profile" onerror="this.style.display='none'">
+                <div class="signature-info">
+                    <div class="signature-name">Emhemed Elahresh</div>
+                    <div class="signature-company">Victory Hour Media</div>
+                    <div class="signature-description">
+                        Creating impactful digital experiences and media solutions. Every project is crafted with attention to detail and user experience in mind.
+                    </div>
+                    <div class="signature-buttons">
+                        <a href="mailto:contact@example.com" class="signature-btn">Email</a>
+                        <a href="https://balancedlifeharmony-spec.github.io/signature-/" target="_blank" class="signature-btn">Website</a>
+                    </div>
+                </div>
+            </div>
+            <div class="signature-copyright">© 2025 Emhemed Elahresh. All rights reserved.</div>
+        </div>
+    </div>
+
+    <script>
+        const audioElement = document.getElementById('quranAudio');
+        const audioSource = document.getElementById('audioSource');
+        let currentVerse = 6;
+        let isContinuousMode = false;
+
+        const verseUrls = {
+            6: 'https://everyayah.com/data/Abdul_Basit_Murattal_192kbps/002006.mp3',
+            7: 'https://everyayah.com/data/Abdul_Basit_Murattal_192kbps/002007.mp3',
+            8: 'https://everyayah.com/data/Abdul_Basit_Murattal_192kbps/002008.mp3',
+            9: 'https://everyayah.com/data/Abdul_Basit_Murattal_192kbps/002009.mp3',
+            10: 'https://everyayah.com/data/Abdul_Basit_Murattal_192kbps/002010.mp3',
+            11: 'https://everyayah.com/data/Abdul_Basit_Murattal_192kbps/002011.mp3',
+            12: 'https://everyayah.com/data/Abdul_Basit_Murattal_192kbps/002012.mp3',
+            13: 'https://everyayah.com/data/Abdul_Basit_Murattal_192kbps/002013.mp3',
+            14: 'https://everyayah.com/data/Abdul_Basit_Murattal_192kbps/002014.mp3',
+            15: 'https://everyayah.com/data/Abdul_Basit_Murattal_192kbps/002015.mp3',
+            16: 'https://everyayah.com/data/Abdul_Basit_Murattal_192kbps/002016.mp3'
+        };
+
+        function playVerse(verseNumber) {
+            const buttons = document.querySelectorAll('.verse-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            if (event && event.target) {
+                event.target.classList.add('active');
+            }
+
+            currentVerse = verseNumber;
+            isContinuousMode = false;
+            audioSource.src = verseUrls[verseNumber];
+            audioElement.load();
+            audioElement.play();
+        }
+
+        function playAllVerses() {
+            isContinuousMode = true;
+            currentVerse = 6;
+            loadAndPlayVerse(6);
+        }
+
+        function loadAndPlayVerse(verseNumber) {
+            if (verseNumber > 16) {
+                isContinuousMode = false;
+                return;
+            }
+
+            const buttons = document.querySelectorAll('.verse-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            buttons[verseNumber - 6].classList.add('active');
+
+            audioSource.src = verseUrls[verseNumber];
+            audioElement.load();
+            audioElement.play();
+            currentVerse = verseNumber;
+        }
+
+        // Auto-play next verse when current one ends
+        audioElement.addEventListener('ended', function() {
+            if (isContinuousMode && currentVerse < 16) {
+                currentVerse++;
+                loadAndPlayVerse(currentVerse);
+            }
+        });
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            if (e.code === 'Space') {
+                e.preventDefault();
+                if (audioElement.paused) {
+                    audioElement.play();
+                } else {
+                    audioElement.pause();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
